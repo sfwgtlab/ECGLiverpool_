@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/Ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/ic_search_main"
+            android:src="@drawable/ic_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="95"/>
+
+        <EditText
+            android:id="@+id/EtSearch_main"
+            android:layout_width="match_parent"
+            android:layout_weight="20"
+            android:layout_height="40dp"
+            android:hint="Buscar Ej: iphone"/>
+
+        <ImageView
+            android:id="@+id/ic_filter"
+            android:src="@drawable/filter_list"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="100"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TvOrder_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/Ll_search"
+        android:text="Orden Predefinido"/>
+
+
+    
+    <ScrollView
+        android:id="@+id/Sv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/TvOrder_main">
+        
+        <LinearLayout
+            android:id="@+id/LlProducts_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RvProducts_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintVertical_weight="100"
+                app:layout_constraintHorizontal_weight="100"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
